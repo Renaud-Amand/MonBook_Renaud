@@ -5,6 +5,8 @@
 - **String** : Du texte. Il faut toujours mettre des guillemets (ex: `"Bonjour"`).
 
 - **Integer (int)** : Un nombre entier, sans guillemets (ex: `33`).
+
+- **Floating Point (float)** : Un nombre décimal (ex: `33.5).
 ---
 ##🧠 `Mes premières fonctions`
 ---
