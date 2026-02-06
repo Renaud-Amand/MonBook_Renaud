@@ -63,5 +63,5 @@
 - **La priorité des calculs** : Toujours mettre des parenthèses pour les additions avant une divison `(a + b) / c`
 
 - **Le f-string** : La méthode ultime pour afficher des variables proprement.
-    - `f"Texte {ma_variable}"
+    - `f"Texte {ma_variable}"`
     - `{variable:.2f}` pour limiter les chiffres après la virgule
