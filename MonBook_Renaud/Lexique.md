@@ -7,6 +7,11 @@
 - **Integer (int)** : Un nombre entier, sans guillemets (ex: `33`).
 
 - **Floating Point (float)** : Un nombre décimal (ex: `33.5).
+
+    - Exemple : (.2f) : Exemple n'afficher que 2 chiffres après la virgule.
+    - Exemple : (.5f) : Exemple n'afficher que 5 chiffres après la virgule.
+
+- **f-string** : (Formatted string) Une façon moderne d'intégrer des variables directement dans du texte en utilisant `f"Texte {variable}"`.
 ---
 ##🧠 `Mes premières fonctions`
 ---
@@ -22,13 +27,12 @@
 
 - **Création** : On utilise des crochets `[]`.
 
-    * Exemple : `ma_liste = ["A", "B", "C"]`
+    - Exemple : `ma_liste = ["A", "B", "C"]`
 
 - **L'Index (La règle d'or)** : En informatique, on compte à partir de **0**.
 
-    * `ma_liste[0]` est le 1er élément.
-
-    * `ma_liste[1]` est le 2ème élément.
+    - `ma_liste[0]` est le 1er élément.
+    - `ma_liste[1]` est le 2ème élément.
 
 - **Ajouter** : `.append("élément")` ajoute à la fin de la liste.
 
@@ -42,7 +46,7 @@
 ---
 - **Liste** : Une structure de données qui permet de stocker plusieurs éléments (nombres, chaînes de caractères, etc.) dans une seule variable, délimités par des crochets `[]`.
 
-- **Index** : Le numéro de position d'un élément dans une liste. Attention : le premier élément est toujours à l'index **0**.
+- **Index** : Le numéro de position d'un élément dans une liste. Attention : le premier élément est toujours à l'index **`0`**.
 
 - **len()** : Fonction qui permet de compter le nombre d'éléments dans une liste (Length).
 
@@ -52,4 +56,12 @@
 
 - **.sort()** : Méthode qui trie les éléments d'une liste (par ordre croissant pour les nombres).
 
-- **f-string** : (Formatted string) Une façon moderne d'intégrer des variables directement dans du texte en utilisant `f"Texte {variable}"`.
+- **L'entrée utilisateur (`input`)** : Elle récupère toujours du texte (String).
+
+- **La conversion (`float`)** : Indispensable pour trasnformer le texte en nombre et faire des calculs.
+
+- **La priorité des calculs** : Toujours mettre des parenthèses pour les additions avant une divison `(a + b) / c`
+
+- **Le f-string** : La méthode ultime pour afficher des variables proprement.
+    - `f"Texte {ma_variable}"
+    - `{variable:.2f}` pour limiter les chiffres après la virgule
