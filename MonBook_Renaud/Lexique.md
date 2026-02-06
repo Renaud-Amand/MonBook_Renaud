@@ -1,19 +1,13 @@
-# 📖 Lexique de Renaud
-
-
-
-## 🧠 Concepts de base
-
+# `Lexique de Renaud`
+---
 * **Variable** : Comme une boîte étiquetée où on range une info (ex: `age = 33`).
 
 * **String** : Du texte. Il faut toujours mettre des guillemets (ex: `"Bonjour"`).
 
 * **Integer (int)** : Un nombre entier, sans guillemets (ex: `33`).
-
-
-
-## 🛠️ Mes premières fonctions
-
+---
+## `Mes premières fonctions`
+---
 * **print()** : La commande pour afficher quelque chose à l'écran.
 
 * **input()** : Pour poser une question à l'utilisateur et récupérer sa réponse.
@@ -41,8 +35,19 @@
 * **Modifier** : `ma_liste[1]` = "Nouveau" remplace l'élément à l'index 1.
 
 * **Mesurer** : `len(ma_liste)` donne le nombre total d'éléments.
+---
+### `Les listes et fonctions de base`
+---
+* **Liste** : Une structure de données qui permet de stocker plusieurs éléments (nombres, chaînes de caractères, etc.) dans une seule variable, délimités par des crochets `[]`.
 
-<h3 style="color:dodgerblue";>Les listes et Fonctions de base</h3>
+* **Index** : Le numéro de position d'un élément dans une liste. Attention : le premier élément est toujours à l'index **0**.
 
+* **len()** : Fonction qui permet de compter le nombre d'éléments dans une liste (Length).
 
+* **max() / min()** : Fonctions qui renvoient respectivement la valeur la plus haute et la plus basse d'une liste.
 
+* **.append()** : Méthode qui permet d'ajouter un élément à la fin d'une liste.
+
+* **.sort()** : Méthode qui trie les éléments d'une liste (par ordre croissant pour les nombres).
+
+* **f-string** : (Formatted string) Une façon moderne d'intégrer des variables directement dans du texte en utilisant `f"Texte {variable}"`.
