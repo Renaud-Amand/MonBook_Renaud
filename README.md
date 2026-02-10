@@ -33,6 +33,7 @@ Conducteur poid lourds et anciennement Sapeur-Pompier, je mets aujourd'hui ma ri
 ## 📬 Contact & Veille
 * **Profil :** Renaud Amand
 * **Objectif :** Architecture Système & Intégration IA
+* **Actuellement :** En spécialisation Architecture IA | Disponible pour projets d'automatisation.
 
 ---
 
