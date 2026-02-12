@@ -36,6 +36,10 @@
 
 - **Ajouter** : `.append("élément")` ajoute à la fin de la liste.
 
+- **Insérer** : `.insert()`insérer un élement a un endroit précis.
+
+- **Ajouters** : `.extend()` ajouter plusieurs élements.
+
 - **Supprimer** : `.pop(index)` supprime l'élément à la position donnée et décale les autres.
 
 - **Modifier** : `ma_liste[1]` = "Nouveau" remplace l'élément à l'index 1.
