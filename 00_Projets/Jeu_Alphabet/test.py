@@ -6,9 +6,8 @@ pygame.init()
 # 1. On crée d'abord l'écran et la police
 screen = pygame.display.set_mode((1240, 960))
 pygame.display.set_caption('Jeu Apprentissage Charlène')
-ma_police = pygame.font.SysFont("Arial", 350) # On le met en très gros !
-petite_police = pygame.font.SysFont("Arial", 100)
-screen_rect = screen.get_rect()
+ma_police = pygame.font.SysFont("Arial", 250) # On le met en très gros !
+petite_police = pygame.font.SysFont("Arial", 80)
 
 alphabet = [
     ("A", "Avion"), ("B", "Ballon"), ("C", "Chat"), ("D", "Dauphin"),
@@ -30,16 +29,13 @@ while en_marche:
     lettre, objet = alphabet[index]
      # 1. On prépare la lettre (en gros)
     image_lettre = ma_police.render(lettre, True, (0, 0, 0))
-    rect_lettre = image_lettre.get_rect()
-    rect_lettre.centerx = screen_rect.centerx
-    rect_lettre.centery = screen_rect.centery - 100
-    screen.blit(image_lettre, rect_lettre) 
+    screen.blit(image_lettre, (550, 250)) 
     
-    image_objet = petite_police.render(objet, True, (50, 50, 50))
-    rect_objet = image_objet.get_rect()
-    rect_objet.centerx = screen_rect.centerx
-    rect_objet.centery = screen_rect.centery + 150
-    screen.blit(image_objet, rect_objet)
+    # 2. ON AJOUTE L'OBJET (en plus petit peut-être ?)
+    # On crée une police plus petite pour le mot
+    image_objet = petite_police.render(objet, True, (50, 50, 50)) # Gris foncé
+    # On le colle sous la lettre (on descend sur l'axe Y : 250 -> 550)
+    screen.blit(image_objet, (530, 550))
     # B. On rafraîchit l'écran
     pygame.display.flip()
 
@@ -50,12 +46,12 @@ while en_marche:
             
         elif event.type == pygame.KEYDOWN:
             # On change d'index seulement quand une touche est pressée !
-             index = (index + 1) % len(alphabet)
-            
+            if index < len(alphabet) - 1:
+                index = index + 1
+            else:
+                index = 0
+
 pygame.quit()
 sys.exit()
 
 
-
-
-            
