@@ -1,8 +1,12 @@
 import pygame
 import sys
 import os
+import random
 
 pygame.init()
+pygame.mixer.init()
+
+#On charge un son
 
 # 1. On crée d'abord l'écran et la police
 screen = pygame.display.set_mode((1240, 960))
@@ -19,17 +23,39 @@ alphabet = [
     ("M", "Maison"), ("N", "Nuage"), ("O", "Oiseau"), ("P", "Poisson"),
     ("Q", "Quille"), ("R", "Robot"), ("S", "Soleil"), ("T", "Tortue"),
     ("U", "Univers"), ("V", "Velo"), ("W", "Wagon"), ("X", "Xylophone"),
-    ("Y", "Yaourt"), ("Z", "Zebre")
+    ("Y", "Yaourt"), ("Z", "Zebre"),
 ]
 
-index = 0
-en_marche = True
+confettis = []
+for i in range(50):
+    # Chaque confetti = [x, y, couleur, vitesse]
+    confettis.append([random.randint(0, 800), random.randint(-400, 0), 
+                      (random.randint(0,255), random.randint(0,255), random.randint(0,255)), 
+                      random.randint(2, 5)])
 
+
+en_marche = True
+fete_active = False
+compteur_fete = 0
+index = 0
+
+#Start
 while en_marche:
     # A. Le dessin (On efface et on dessine la lettre actuelle)
     screen.fill((255, 255, 255))
-    
-    lettre, objet = alphabet[index]
+
+    if index < len(alphabet):
+        lettre, objet = alphabet[index]
+
+    else:
+        texte_bravo = ma_police.render('Bravo !', True, (255, 0, 100))
+        rect_bravo = texte_bravo.get_rect(center=(screen_rect.centerx, screen_rect.centery + 100))
+        screen.blit(texte_bravo, rect_bravo)
+
+        texte_info = petite_police.render("Appuie pour recommencer", True, (0, 0, 0))
+        rect_info = texte_info.get_rect(center=(screen_rect.centerx, screen_rect.centery + 300))
+        screen.blit(texte_info, rect_info)
+
 
     #On définit le chemin de l'image
     chemin_image = f"images/{objet}.png"
@@ -57,6 +83,17 @@ while en_marche:
     rect_objet.centerx = screen_rect.centerx
     rect_objet.bottom = screen_rect.bottom -40
     screen.blit(image_objet, rect_objet)
+
+    if fete_active:
+        for c in confettis:
+            c[1] += c[3] # Vitesse de chute
+            pygame.draw.rect(screen, c[2], (c[0], c[1], 12, 12)) # Confettis un peu plus gros
+            
+            # RECYCLAGE : Si le confetti sort en bas (960), il repart en haut
+            if c[1] > 960: 
+                c[1] = random.randint(-100, -10)
+                c[0] = random.randint(0, 1240) # Largeur totale de ton écran
+
     # B. On rafraîchit l'écran
     pygame.display.flip()
 
@@ -66,9 +103,17 @@ while en_marche:
             en_marche = False
             
         elif event.type == pygame.KEYDOWN:
-            # On change d'index seulement quand une touche est pressée !
-             index = (index + 1) % len(alphabet)
-            
+            index = index + 1
+
+            if index == len(alphabet):               
+                fete_active = True
+                compteur_fete = 0
+            elif index > len(alphabet):
+                index = 0
+                fete_active = False
+                compteur_fete = 0
+             
+                         
 pygame.quit()
 sys.exit()
 
