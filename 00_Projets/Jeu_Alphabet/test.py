@@ -7,7 +7,7 @@ pygame.init()
 pygame.mixer.init()
 
 # 1. Configuration de l'écran et des polices
-screen = pygame.display.set_mode((1240, 960))
+screen = pygame.display.set_mode((1920, 1080))
 pygame.display.set_caption('Jeu Apprentissage Charlène')
 
 # Correction du nom de la police (sans l'espace à la fin)
@@ -19,7 +19,7 @@ hauteur = screen_rect.height
 
 alphabet = [
     ("A", "Avion"), ("B", "Ballon"), ("C", "Chat"), ("D", "Dauphin"),
-    ("E", "Etoile"), ("F", "Fleur"), ("G", "Gourde"), ("H", "Hibou"),
+    ("E", "Etoile"), ("F", "Fleur"), ("G", "Gateau"), ("H", "Hopital"),
     ("I", "Ile"), ("J", "Jardin"), ("K", "Kangourou"), ("L", "Lion"),
     ("M", "Maison"), ("N", "Nuage"), ("O", "Oiseau"), ("P", "Poisson"),
     ("Q", "Quille"), ("R", "Robot"), ("S", "Soleil"), ("T", "Tortue"),
